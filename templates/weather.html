@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title> What to wear? </title>
+		<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link href="../static/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<div class="topnav">
+  		<a class="active" href="{{ url_for('main')}}">Home</a>
+		</div>
+		<div class="page_header {{css_class}}">
+
+			{% if css_class == "default" %}
+				<h1 class="warning">
+					{{city_weather["main"]}}
+				</h1>
+			{% endif %}
+
+				<h1><strong>
+			 			Weather for {{city_weather["name"]}}
+				</h1></strong>
+
+				<h3>
+						{{city_weather["description"]}}
+				</h3>
+
+				<h3>
+				 	{{city_weather["temp"]}} &#x2103
+				</h3>
+
+      	<h1>
+        	{{city_wear}}
+      	</h1>
+
+		  <div id = "event-choice-form">
+		    <form method="post" action="/weather">
+		      <section>
+		        <legend><h2>Choose another location... </h2></legend><br>
+		        <input type="text" id="location" class = "box" name="location" value="" placeholder="Location e.g. London" required="required" autofocus="autofocus"/><br>
+		        <input type="submit" value="Submit" id="submit-button" class= "button">
+		      </section>
+		    </form>
+			</div>
+	</body>

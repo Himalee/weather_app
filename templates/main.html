@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title> What to wear? </title>
+		<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link href="../static/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<div class="page_header default">
+			<h1><strong>
+			WHAT SHALL I WEAR?
+			</h1></strong>
+		 <br><h3 class = "tagline">Get clothing recommendations based on the weather!</br>
+				<br>Choose a city</br></h3>
+		  <div id = "event-choice-form">
+		    <form method="post" action="/weather">
+		      <section>
+		        <br><p>{% if error %}{{error}}{% endif %}</p>
+		        <input type="text" id="location" class = "box" name="location" value="" placeholder="Location e.g. London" required="required" autofocus="autofocus"/><br>
+		        <input type="submit" value="Submit" id="submit-button" class = "button">
+		      </section>
+		    </form>
+			</div>
+	</body>
